@@ -27,6 +27,19 @@ let SameAs (a:'a) (b:'a) =
 let NotSameAs (a:'a) (b:'a) = 
     Assert.AreNotSame(a,b)
 
+/// Assert function for greater than
+[<DebuggerStepThrough>]
+let GreaterThan (b:'a) (a:'a)  = 
+    if not(a > b) then
+        let message = sprintf "%A was expected to be greated than %A!" a b
+        Assert.Fail(message)
+
+/// Assert function for greater than
+[<DebuggerStepThrough>]
+let LessThan (a:'a) (b:'a) = 
+    if not(a < b) then
+        let message = sprintf "%A was expected to be less than %A!" a b
+        Assert.Fail(message)
 
 /// Ensures that the expected exception is thrown.
 /// Allows the following syntax:
