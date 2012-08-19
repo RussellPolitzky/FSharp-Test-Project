@@ -4,6 +4,9 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 open Assertions
 open ExpertFSharp
 open System.Diagnostics
+open RegistryReader 
+open ReadFileAnimalsNumbers
+
 
 [<TestClass>]
 type Test_FSharp() =
@@ -51,5 +54,23 @@ type Test_FSharp() =
         // is turned on.
 
         
+    [<TestMethod>]        
+    member this.``should be able to determine if a proxy is in use or not``() =
+        (getRegistryValue "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable").ToString()
+        |> IsSameStringAs @""
 
-
+    
+    [<TestMethod>]        
+    member this.``should be able to get a number animal file``() =
+        getFile
+        |> IsSameStringAs ""
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        

@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Script.fsx" />
+    <Compile Include="RegistryReader.fs" />
     <Compile Include="ExpertFSharp.fs" />
+    <Compile Include="ReadFileAnimalsNumbers.fs" />
     <Compile Include="TestFSharp.fs" />
   </ItemGroup>
   <ItemGroup>
